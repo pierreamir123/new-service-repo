@@ -1,0 +1,6 @@
+node_modules/
+tools/java/
+.mcp.json
+firestore-debug.log
+.firebase/
+*.log

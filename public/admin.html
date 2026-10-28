@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>لوحة الإدارة</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/coptic.css">
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+<div class="page">
+  <header class="topbar">
+    <a class="brand" href="admin.html">لوحة إدارة الفريق</a>
+    <nav>
+      <a href="index.html">الموقع</a>
+      <button class="btn" id="signout" type="button" hidden style="min-height:44px;padding:8px 22px;font-size:15px">خروج</button>
+    </nav>
+  </header>
+
+  <!-- Signed-out gate -->
+  <section class="tray tray--pink" id="gate" aria-labelledby="gate-title" style="justify-items:start">
+    <p class="eyebrow">للإدارة بس</p>
+    <h1 id="gate-title" style="font-size:clamp(40px,6vw,64px)">سجّل دخولك</h1>
+    <p class="lead" id="gate-text">الصفحة دي بتعرض بيانات المتطوعين، ومتاحة للحساب المصرح له بس.</p>
+    <div class="actions"><button class="btn btn--primary" id="signin" type="button">دخول بحساب جوجل</button></div>
+    <p class="error" id="gate-error" role="alert" aria-live="polite"></p>
+  </section>
+
+  <main id="dash" hidden style="display:grid;gap:var(--dp-spacing-gap)">
+    <section class="kpis" aria-label="أرقام سريعة">
+      <div class="cushion cushion--pink kpi"><strong id="k-total">0</strong><span>إجمالي المسجلين</span></div>
+      <div class="cushion cushion--mint kpi"><strong id="k-week">0</strong><span>آخر ٧ أيام</span></div>
+      <div class="cushion cushion--yellow kpi"><strong id="k-new">0</strong><span>جدد لسه متكلمناش معاهم</span></div>
+      <div class="cushion cushion--blue kpi"><strong id="k-contacted">0</strong><span>اتكلمنا معاهم</span></div>
+      <div class="cushion cushion--lavender kpi"><strong id="k-onboarded">0</strong><span>انضموا للفريق</span></div>
+    </section>
+
+    <section class="tray" aria-labelledby="charts-title">
+      <h2 id="charts-title">التحليل</h2>
+      <div class="charts">
+        <figure class="cushion cushion--cream chart"><figcaption>المسجلين حسب الشخصية</figcaption><div class="chart__box"><canvas id="c-persona" role="img" aria-label="رسم بياني: المسجلين حسب الشخصية"></canvas></div></figure>
+        <figure class="cushion cushion--cream chart"><figcaption>الوقت المتاح</figcaption><div class="chart__box"><canvas id="c-availability" role="img" aria-label="رسم بياني: الوقت المتاح"></canvas></div></figure>
+        <figure class="cushion cushion--cream chart chart--wide"><figcaption>التسجيلات على مدار الأيام (آخر ٣٠ يوم)</figcaption><div class="chart__box"><canvas id="c-time" role="img" aria-label="رسم بياني: التسجيلات حسب اليوم"></canvas></div></figure>
+        <figure class="cushion cushion--cream chart"><figcaption>مراحل المتابعة</figcaption><div class="chart__box"><canvas id="c-status" role="img" aria-label="رسم بياني: مراحل المتابعة"></canvas></div></figure>
+        <figure class="cushion cushion--cream chart"><figcaption>شكل الشخصية المختار</figcaption><div class="chart__box"><canvas id="c-avatar" role="img" aria-label="رسم بياني: شكل الشخصية المختار"></canvas></div></figure>
+        <figure class="cushion cushion--cream chart"><figcaption>أخدوا إعداد خدام؟</figcaption><div class="chart__box"><canvas id="c-training" role="img" aria-label="رسم بياني: مين أخد إعداد خدام"></canvas></div></figure>
+      </div>
+    </section>
+
+    <section class="tray tray--lavender" aria-labelledby="table-title">
+      <div class="section-head"><h2 id="table-title">المسجلين</h2><p class="small" id="count-line"></p></div>
+      <div class="filters">
+        <div class="field"><label for="q">بحث بالاسم أو الرقم</label><input class="input" id="q" type="search" autocomplete="off"></div>
+        <div class="field"><label for="f-persona">الشخصية</label><select class="input" id="f-persona"><option value="">الكل</option></select></div>
+        <div class="field"><label for="f-status">الحالة</label><select class="input" id="f-status"><option value="">الكل</option></select></div>
+        <button class="btn btn--primary" id="csv" type="button">تصدير CSV</button>
+      </div>
+      <div class="table-wrap" tabindex="0" role="region" aria-label="جدول المسجلين">
+        <table>
+          <thead><tr><th>التاريخ</th><th>الاسم</th><th>الموبايل</th><th>الشخصية</th><th>الوقت</th><th>ملاحظة</th><th>إعداد خدام</th><th>روابط</th><th>الحالة</th></tr></thead>
+          <tbody id="rows"></tbody>
+        </table>
+      </div>
+      <p class="error" id="table-error" role="alert"></p>
+    </section>
+  </main>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<script type="module" src="js/admin.js"></script>
+</body>
+</html>

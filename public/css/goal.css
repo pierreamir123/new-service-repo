@@ -1,0 +1,70 @@
+/* "هنوصل لإيه؟" (Goal) chapter: radiating mission banner, goals along a gold path, arch cards, medal values.
+   Loaded after story.css. */
+.goal { position: relative; background: radial-gradient(80% 50% at 50% 0%, rgba(217, 169, 58, 0.22), transparent 70%), rgba(255, 240, 210, 0.05); gap: clamp(28px, 4vw, 48px); }
+.goal > :not(.goal__rays) { position: relative; z-index: 1; }
+.goal__rays { position: absolute; inset: 0 0 auto 0; height: 560px; z-index: 0; pointer-events: none; background: repeating-conic-gradient(from 0deg at 50% 0%, rgba(217, 169, 58, 0.14) 0 5deg, transparent 5deg 12deg); -webkit-mask-image: radial-gradient(60% 100% at 50% 0%, #000, transparent 72%); mask-image: radial-gradient(60% 100% at 50% 0%, #000, transparent 72%); }
+.goal__head { text-align: center; justify-items: center; margin-inline: auto; }
+.goal__head h2 { font-size: clamp(40px, 5.6vw, 72px); }
+.goal__title { text-align: center; font-family: var(--hand); font-weight: 700; font-size: clamp(28px, 3.6vw, 42px); line-height: 1.6; color: var(--gold-hi); }
+
+/* ---------- mission banner ---------- */
+.mission-banner { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: clamp(18px, 4vw, 48px); align-items: center; padding: clamp(24px, 4vw, 44px); border-radius: 36px; background: linear-gradient(135deg, rgba(122, 28, 43, 0.92), rgba(58, 12, 20, 0.96)); border: 2px solid var(--gold); box-shadow: 0 0 0 6px rgba(217, 169, 58, 0.14), 0 30px 50px -24px rgba(0, 0, 0, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.12); }
+.mission__text h3 { margin-bottom: 8px; font-family: var(--hand); font-size: clamp(30px, 3.6vw, 44px); color: var(--gold-hi); }
+.mission__text p { max-width: 30em; font-size: clamp(19px, 2.2vw, 26px); line-height: 1.9; color: var(--sc-ink-light); }
+.mission__text .scribble { font-weight: 700; color: var(--gold-hi); }
+.mission__seal { position: relative; width: clamp(110px, 14vw, 170px); aspect-ratio: 1; }
+.mission__medal { position: absolute; inset: 0; width: 100%; height: 100%; color: var(--gold); animation: seal-spin 90s linear infinite; }
+.mission__cross { position: absolute; inset: 30%; width: 40%; height: 40%; color: var(--gold-hi); filter: drop-shadow(0 0 12px rgba(244, 217, 138, 0.7)); }
+@keyframes seal-spin { to { transform: rotate(360deg); } }
+
+/* ---------- goals on a gold path ---------- */
+.goal-path { list-style: none; position: relative; margin: 0; padding: 56px 0 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 22px; }
+.goal-path::before { content: ""; position: absolute; top: 54px; inset-inline: 12.5%; height: 3px; background: repeating-linear-gradient(90deg, var(--gold) 0 10px, transparent 10px 20px); transform-origin: 100% 50%; transform: scaleX(0); transition: transform 1.3s cubic-bezier(0.2, 0.7, 0.2, 1) 0.3s; }
+.goal-path.is-in::before, html:not(.js) .goal-path::before { transform: scaleX(1); }
+.goal-step { position: relative; display: grid; gap: 10px; align-content: start; justify-items: center; text-align: center; padding: 50px 20px 26px; border-radius: 26px; color: var(--ink-wine); background: linear-gradient(180deg, #fff9ec, #f6e1b0); border: 1px solid rgba(255, 255, 255, 0.7); box-shadow: var(--lift); transition: transform var(--dp-motion-interaction); }
+.goal-step:hover { transform: translateY(-8px); }
+.goal-step__n { position: absolute; top: -30px; inset-inline-start: 50%; margin-inline-start: -30px; width: 60px; height: 60px; border-radius: 50%; display: grid; place-items: center; background: radial-gradient(circle at 35% 30%, var(--wine-3), var(--wine-1)); color: var(--gold-hi); font-family: var(--hand); font-weight: 700; font-size: 32px; box-shadow: 0 0 0 4px var(--gold), 0 0 0 9px rgba(35, 5, 9, 0.85), 0 12px 22px rgba(0, 0, 0, 0.45); }
+.goal-step .vicon { color: var(--wine-3); }
+.goal-step strong { font-family: var(--hand); font-size: 26px; line-height: 1.4; color: #8a1f2d; }
+.goal-step p { font-size: 17px; line-height: 1.75; color: #4a1f26; }
+
+/* ---------- who walks with us: church-window arches ---------- */
+.arches { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 26px; }
+.arch { display: grid; gap: 10px; justify-items: center; align-content: start; text-align: center; padding: 44px 28px 30px; border-radius: 150px 150px 26px 26px; color: var(--ink-wine); background: var(--g); border: 3px solid var(--gold); box-shadow: 0 0 0 5px rgba(35, 5, 9, 0.55), var(--lift); transition: transform var(--dp-motion-interaction); }
+.arch:hover { transform: translateY(-6px); }
+.arch__icon { width: 68px; height: 68px; border-radius: 50%; display: grid; place-items: center; background: var(--wine-2); color: var(--gold-hi); box-shadow: 0 0 0 3px var(--gold-hi), 0 10px 20px rgba(0, 0, 0, 0.35); }
+.arch__icon svg { width: 36px; height: 36px; }
+.arch h3 { font-size: 24px; color: var(--ink-wine); }
+.arch p { font-size: 16px; line-height: 1.75; color: #4a1f26; }
+
+/* ---------- values as medals ---------- */
+.medals-wrap { display: grid; gap: 22px; padding: 26px 20px 30px; border-radius: 30px; border-top: 2px solid rgba(217, 169, 58, 0.5); background: linear-gradient(180deg, rgba(217, 169, 58, 0.14), rgba(217, 169, 58, 0.03)); }
+.goal__title--light { font-size: clamp(24px, 3vw, 34px); }
+.medals { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 18px; justify-items: center; }
+.medal { display: grid; gap: 8px; justify-items: center; text-align: center; max-width: 190px; }
+.medal__disc { width: 96px; height: 96px; border-radius: 50%; display: grid; place-items: center; background: radial-gradient(circle at 35% 30%, var(--wine-3), var(--wine-1)); color: var(--gold-hi); box-shadow: 0 0 0 3px var(--gold), 0 0 0 8px rgba(35, 5, 9, 0.85), 0 16px 26px -8px rgba(0, 0, 0, 0.6); transition: transform var(--dp-motion-interaction); }
+.medal:hover .medal__disc { transform: scale(1.08) rotate(-4deg); }
+.medal__disc svg { width: 44px; height: 44px; }
+.medal strong { font-size: 19px; color: var(--gold-hi); }
+.medal > span:not(.medal__disc) { font-size: 14px; line-height: 1.6; color: rgba(251, 241, 220, 0.82); }
+
+@media (max-width: 1100px) {
+  .goal-path { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 52px; }
+  .goal-path::before { display: none; }
+  .medals { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+@media (max-width: 760px) {
+  .mission-banner { grid-template-columns: minmax(0, 1fr); text-align: center; justify-items: center; }
+  .mission__seal { order: -1; width: 104px; }
+  .arches { grid-template-columns: minmax(0, 1fr); }
+  .arch { border-radius: 110px 110px 26px 26px; }
+}
+@media (max-width: 520px) {
+  .goal-path { grid-template-columns: minmax(0, 1fr); }
+  .medals { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .mission__medal { animation: none; }
+  .goal-step:hover, .arch:hover, .medal:hover .medal__disc { transform: none; }
+  .goal-path::before { transition: none; transform: scaleX(1); }
+}

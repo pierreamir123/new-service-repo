@@ -1,0 +1,18 @@
+/* Registration extras: service-training question, link rows, five progress steps. Loaded before mobile.css. */
+.q { display: block; font-weight: 700; font-size: var(--dp-typography-small); color: rgba(251, 241, 220, 0.9); }
+.steps { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+.steps li { font-size: 12px; }
+.steps li:not(:last-child)::after { inset-inline-start: calc(50% + 20px); width: calc(100% - 40px); }
+
+.training-more { display: grid; gap: 18px; padding: 16px 16px 18px; border-radius: 22px; border: 1px dashed rgba(217, 169, 58, 0.45); background: rgba(217, 169, 58, 0.06); }
+.training-more[hidden] { display: none; }
+
+.links { display: grid; gap: 10px; }
+.link-rows { display: grid; gap: 10px; }
+.link-row { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 8px; align-items: center; }
+.link-row .input { direction: ltr; text-align: left; }
+.link-row .input::placeholder { text-align: left; }
+.link-remove { width: 44px; height: 44px; border-radius: 50%; padding: 0; cursor: pointer; display: grid; place-items: center; font-size: 22px; line-height: 1; color: var(--gold-hi); background: rgba(58, 12, 20, 0.7); border: 1px solid rgba(217, 169, 58, 0.45); }
+.link-remove:hover { background: rgba(122, 28, 43, 0.8); }
+.link-add { justify-self: start; min-height: 44px; padding-inline: 14px; text-decoration: none; border: 1px dashed rgba(217, 169, 58, 0.55); border-radius: 999px; }
+.link-add[hidden] { display: none; }

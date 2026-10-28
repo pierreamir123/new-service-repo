@@ -1,0 +1,517 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>انضم لفريق الخدمة</title>
+  <meta name="theme-color" content="#230509">
+  <meta name="description" content="فريق خدمة جديد بيتبني دلوقتي. اتعرف على رؤيتنا وعلى الشخصيات الخمس للخدمة، وسجّل في أقل من دقيقتين.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/coptic.css">
+  <link rel="stylesheet" href="css/scenes.css">
+  <link rel="stylesheet" href="css/story.css">
+  <link rel="stylesheet" href="css/goal.css">
+  <link rel="stylesheet" href="css/register.css">
+  <link rel="stylesheet" href="css/mobile.css">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <!-- Coptic cross: equal arms, each ending in three rounded points, with a ring at the centre -->
+    <symbol id="i-cross" viewBox="0 0 100 100">
+      <mask id="cross-hole"><rect width="100" height="100" fill="#fff"/><circle cx="50" cy="50" r="9" fill="none" stroke="#000" stroke-width="3"/></mask>
+      <g fill="currentColor" mask="url(#cross-hole)">
+        <rect x="39" y="15" width="22" height="70" rx="3"/><rect x="15" y="39" width="70" height="22" rx="3"/>
+        <circle cx="41" cy="13" r="6"/><circle cx="50" cy="8" r="6"/><circle cx="59" cy="13" r="6"/>
+        <circle cx="41" cy="87" r="6"/><circle cx="50" cy="92" r="6"/><circle cx="59" cy="87" r="6"/>
+        <circle cx="13" cy="41" r="6"/><circle cx="8" cy="50" r="6"/><circle cx="13" cy="59" r="6"/>
+        <circle cx="87" cy="41" r="6"/><circle cx="92" cy="50" r="6"/><circle cx="87" cy="59" r="6"/>
+      </g>
+    </symbol>
+    <!-- Coptic church silhouette: three domes, each topped with a cross -->
+    <symbol id="i-church" viewBox="0 0 300 120">
+      <g fill="currentColor">
+        <rect x="0" y="100" width="300" height="20"/>
+        <rect x="90" y="78" width="120" height="22"/>
+        <rect x="122" y="50" width="56" height="30"/>
+        <path d="M118 52 Q150 4 182 52Z"/>
+        <rect x="48" y="70" width="40" height="30"/>
+        <path d="M44 70 Q68 36 92 70Z"/>
+        <rect x="212" y="70" width="40" height="30"/>
+        <path d="M208 70 Q232 36 256 70Z"/>
+        <path d="M148.5 8h3v22h-3z M142 14h16v3h-16z"/>
+        <path d="M66.5 36h3v19h-3z M61 41h13v3h-13z"/>
+        <path d="M230.5 36h3v19h-3z M225 41h13v3h-13z"/>
+      </g>
+      <g fill="#000" opacity=".3">
+        <path d="M144 78 V62 a6 6 0 0 1 12 0 V78Z"/>
+        <path d="M138 100 V86 a12 12 0 0 1 24 0 V100Z"/>
+        <path d="M60 100 V84 a8 8 0 0 1 16 0 V100Z"/>
+        <path d="M224 100 V84 a8 8 0 0 1 16 0 V100Z"/>
+        <path d="M100 100 V90 a5 5 0 0 1 10 0 V100Z M190 100 V90 a5 5 0 0 1 10 0 V100Z"/>
+      </g>
+    </symbol>
+    <symbol id="i-censer" viewBox="0 0 64 84">
+      <g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="32" cy="6" r="4"/>
+        <path d="M32 10 14 40M32 10 50 40M32 10V30"/>
+        <path d="M12 42H52Q50 70 32 74Q14 70 12 42Z" fill="currentColor"/>
+        <path d="M16 42Q32 22 48 42"/>
+        <path d="M32 22V16M29 19H35"/>
+        <path d="M22 79Q26 83 32 81Q38 83 42 79"/>
+      </g>
+    </symbol>
+    <symbol id="i-book" viewBox="0 0 80 60">
+      <path fill="currentColor" d="M40 14C28 5 14 5 4 11V53C14 47 28 47 40 56C52 47 66 47 76 53V11C66 5 52 5 40 14Z"/>
+      <path d="M40 16V54" stroke="#000" stroke-opacity=".3" stroke-width="2"/>
+      <path d="M20 22h14M20 29h14M20 36h14M46 22h14M46 29h14M46 36h14" stroke="#000" stroke-opacity=".28" stroke-width="2.4" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="i-candle" viewBox="0 0 32 64">
+      <path fill="currentColor" d="M16 1C23 11 23 18 16 23C9 18 9 11 16 1Z"/>
+      <rect x="9" y="27" width="14" height="30" rx="3" fill="currentColor"/>
+      <rect x="4" y="57" width="24" height="6" rx="3" fill="currentColor"/>
+      <path d="M16 23v4" stroke="currentColor" stroke-width="2"/>
+    </symbol>
+
+    <symbol id="i-lamp" viewBox="0 0 60 120">
+      <path d="M30 0V30" stroke="currentColor" stroke-width="2"/>
+      <circle cx="30" cy="32" r="4" fill="currentColor"/>
+      <path d="M14 46H46L40 38H20Z" fill="currentColor"/>
+      <path d="M14 46Q14 92 30 100Q46 92 46 46Z" fill="currentColor" opacity=".3"/>
+      <path d="M14 46Q14 92 30 100Q46 92 46 46" fill="none" stroke="currentColor" stroke-width="3"/>
+      <path d="M30 54C37 65 37 74 30 81C23 74 23 65 30 54Z" fill="#ffd36a"/>
+      <path d="M26 100h8v6h-8z" fill="currentColor"/>
+    </symbol>
+    <symbol id="i-palm" viewBox="0 0 80 130">
+      <path d="M40 128 Q36 66 46 8" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round"/>
+      <path d="M39.2 110.7 Q20.5 101.7 5.2 91.7 Q23.9 107.7 39.2 110.7Z" fill="currentColor"/>
+      <path d="M39.2 110.7 Q57.9 101.7 73.2 91.7 Q54.5 107.7 39.2 110.7Z" fill="currentColor"/>
+      <path d="M38.9 99.7 Q21.6 90.7 7.5 80.7 Q24.8 96.7 38.9 99.7Z" fill="currentColor"/>
+      <path d="M38.9 99.7 Q56.2 90.7 70.3 80.7 Q53.0 96.7 38.9 99.7Z" fill="currentColor"/>
+      <path d="M38.9 88.7 Q23.0 79.7 10.1 69.7 Q25.9 85.7 38.9 88.7Z" fill="currentColor"/>
+      <path d="M38.9 88.7 Q54.7 79.7 67.7 69.7 Q51.8 85.7 38.9 88.7Z" fill="currentColor"/>
+      <path d="M39.1 77.8 Q24.7 68.8 12.9 58.8 Q27.3 74.8 39.1 77.8Z" fill="currentColor"/>
+      <path d="M39.1 77.8 Q53.5 68.8 65.3 58.8 Q50.9 74.8 39.1 77.8Z" fill="currentColor"/>
+      <path d="M39.5 67.0 Q26.5 58.0 15.9 48.0 Q28.9 64.0 39.5 67.0Z" fill="currentColor"/>
+      <path d="M39.5 67.0 Q52.5 58.0 63.1 48.0 Q50.1 64.0 39.5 67.0Z" fill="currentColor"/>
+      <path d="M40.2 56.2 Q28.6 47.2 19.2 37.2 Q30.7 53.2 40.2 56.2Z" fill="currentColor"/>
+      <path d="M40.2 56.2 Q51.7 47.2 61.2 37.2 Q49.6 53.2 40.2 56.2Z" fill="currentColor"/>
+      <path d="M41.0 45.5 Q30.9 36.5 22.6 26.5 Q32.8 42.5 41.0 45.5Z" fill="currentColor"/>
+      <path d="M41.0 45.5 Q51.2 36.5 59.4 26.5 Q49.3 42.5 41.0 45.5Z" fill="currentColor"/>
+      <path d="M42.1 34.9 Q33.5 25.9 26.3 15.9 Q35.0 31.9 42.1 34.9Z" fill="currentColor"/>
+      <path d="M42.1 34.9 Q50.8 25.9 57.9 15.9 Q49.3 31.9 42.1 34.9Z" fill="currentColor"/>
+      <path d="M43.5 24.3 Q36.2 15.3 30.3 5.3 Q37.5 21.3 43.5 24.3Z" fill="currentColor"/>
+      <path d="M43.5 24.3 Q50.7 15.3 56.7 5.3 Q49.4 21.3 43.5 24.3Z" fill="currentColor"/>
+      <path d="M46 8 Q50 0 54 4 Q50 8 46 8Z" fill="currentColor"/>
+    </symbol>
+    <symbol id="i-scroll" viewBox="0 0 120 80">
+      <path d="M22 12H98V68H22Z" fill="currentColor" opacity=".9"/>
+      <ellipse cx="22" cy="40" rx="9" ry="28" fill="currentColor"/><ellipse cx="22" cy="40" rx="4" ry="22" fill="#000" opacity=".25"/>
+      <ellipse cx="98" cy="40" rx="9" ry="28" fill="currentColor"/><ellipse cx="98" cy="40" rx="4" ry="22" fill="#000" opacity=".25"/>
+      <path d="M36 26h48M36 36h48M36 46h48M36 56h30" stroke="#000" stroke-opacity=".3" stroke-width="3" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="i-medallion" viewBox="0 0 200 200">
+      <g fill="none" stroke="currentColor" stroke-width="3">
+      <circle cx="100" cy="100" r="92"/>
+      <circle cx="100" cy="100" r="82" stroke-dasharray="2 7"/>
+      <rect x="52" y="52" width="96" height="96"/>
+      <rect x="52" y="52" width="96" height="96" transform="rotate(45 100 100)"/>
+      <circle cx="100" cy="100" r="30"/>
+      <circle cx="160.0" cy="100.0" r="14"/>
+      <circle cx="142.4" cy="142.4" r="14"/>
+      <circle cx="100.0" cy="160.0" r="14"/>
+      <circle cx="57.6" cy="142.4" r="14"/>
+      <circle cx="40.0" cy="100.0" r="14"/>
+      <circle cx="57.6" cy="57.6" r="14"/>
+      <circle cx="100.0" cy="40.0" r="14"/>
+      <circle cx="142.4" cy="57.6" r="14"/>
+      </g>
+      <path d="M96 100h8M100 96v8" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
+    </symbol>
+  </defs>
+</svg>
+<div class="progress" aria-hidden="true"><i></i></div>
+<nav class="chapters" aria-label="أقسام الصفحة">
+  <a href="#hero" data-ch="hero"><span>البداية</span></a>
+  <a href="#word" data-ch="word"><span>الكلمة</span></a>
+  <a href="#vision" data-ch="vision"><span>الرؤية</span></a>
+  <a href="#goal" data-ch="goal"><span>الهدف</span></a>
+  <a href="#children" data-ch="children"><span>الأولاد</span></a>
+  <a href="#personas" data-ch="personas"><span>الشخصيات</span></a>
+  <a href="#join" data-ch="join"><span>انضم</span></a>
+  <a href="#faq" data-ch="faq"><span>أسئلة</span></a>
+  <a href="#closing" data-ch="closing"><span>الختام</span></a>
+</nav>
+<div class="page">
+
+  <header class="topbar">
+    <a class="brand" href="#top">فريق الخدمة</a>
+    <nav aria-label="أقسام الصفحة">
+      <a href="#vision">الرؤية</a>
+      <a href="#goal">الهدف</a>
+      <a href="#children">الأولاد</a>
+      <a href="#word">الكلمة</a>
+      <a href="#personas">الشخصيات</a>
+      <a href="#faq">أسئلة</a>
+      <a class="btn btn--primary" href="#join" style="min-height:44px;padding:8px 22px;font-size:15px">انضم</a>
+      <button class="menu-btn" type="button" aria-expanded="false" aria-label="القائمة"><span></span><span></span><span></span></button>
+    </nav>
+  </header>
+
+  <main id="top" style="display:grid;gap:var(--dp-spacing-gap)">
+
+    <!-- Hero + facts: one chapter -->
+    <div class="chapter chapter--hero" id="hero">
+    <section class="tray tray--pink hero" aria-labelledby="hero-title">
+      <div class="hero__copy">
+        <p class="eyebrow"><svg class="ico" aria-hidden="true"><use href="#i-cross"/></svg>خدمة جديدة بتبدأ دلوقتي</p>
+        <h1 id="hero-title">محتاجين <span class="scribble">كل واحد</span> منكم</h1>
+        <p class="lead">فريق خدمة جديد بيتبني، ومحتاج ناس عندها شغف وانضباط وبتساهم بوقتها. اختار الدور اللي شبهك وانضم لينا في أقل من دقيقتين.</p>
+        <div class="actions">
+          <a class="btn btn--primary" href="#join">انضم للفريق</a>
+          <a class="btn btn--ghost" href="#personas">اتعرف على الشخصيات</a>
+        </div>
+      </div>
+      <div class="sculpture" aria-hidden="true">
+        <img class="s1" src="img/personas/p1-female-front.webp" width="520" height="832" alt="">
+        <img class="s2" src="img/personas/p2-male-front.webp" width="520" height="832" alt="">
+        <img class="s3" src="img/personas/p3-female-front.webp" width="520" height="832" alt="">
+        <img class="s4" src="img/personas/p4-male-front.webp" width="520" height="832" alt="">
+        <img class="s5" src="img/personas/p5-female-front.webp" width="520" height="832" alt="">
+      </div>
+      <p class="margin-note" aria-hidden="true">٥ شخصيات.. إنت أنهي واحد؟
+        <svg viewBox="0 0 80 50" width="64" height="40"><path d="M70 6 C 40 2, 14 14, 10 40" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><path d="M2 32 10 42 20 32" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </p>
+      <svg class="hero__cross" aria-hidden="true"><use href="#i-cross"/></svg>
+      <svg class="hero__church" aria-hidden="true" preserveAspectRatio="xMidYMax slice"><use href="#i-church"/></svg>
+    </section>
+
+    <section class="facts" aria-label="في كلمتين">
+      <div class="cushion cushion--mint fact"><svg class="lamp" aria-hidden="true"><use href="#i-lamp"/></svg><strong>٥</strong><span>مجالات خدمة، ولكل مجال شخصية</span></div>
+      <div class="cushion cushion--lavender fact"><svg class="lamp" aria-hidden="true"><use href="#i-lamp"/></svg><strong>شغف · انضباط · وقت</strong><span>اللي بنطلبه من كل خادم</span></div>
+      <div class="cushion cushion--yellow fact"><svg class="lamp" aria-hidden="true"><use href="#i-lamp"/></svg><strong>أقل من ٢ دقيقة</strong><span>وقت تسجيلك في الفريق</span></div>
+    </section>
+    </div>
+
+    <div class="divider" aria-hidden="true"><svg><use href="#i-cross"/></svg></div>
+
+    <!-- Scripture journal: colourful highlighted verses on a handwritten field-journal page -->
+    <section class="tray tray--paper journal chapter" id="word" aria-labelledby="word-title">
+      <svg class="deco deco--palm" aria-hidden="true"><use href="#i-palm"/></svg>
+      <svg class="deco deco--scroll" aria-hidden="true"><use href="#i-scroll"/></svg>
+      <div class="journal__head">
+        <svg class="compass" viewBox="0 0 120 120" aria-hidden="true">
+          <circle cx="60" cy="60" r="54" fill="#fff8e6" stroke="#2b0a10" stroke-width="3"/>
+          <circle cx="60" cy="60" r="44" fill="none" stroke="#2b0a10" stroke-width="1.5" stroke-dasharray="3 5"/>
+          <path d="M60 14 70 60 60 106 50 60Z" fill="#8a1f2d" stroke="#2b0a10" stroke-width="2.5" stroke-linejoin="round" transform="rotate(35 60 60)"/>
+          <path d="M60 14 70 60 50 60Z" fill="#2b0a10" transform="rotate(35 60 60)"/>
+          <circle cx="60" cy="60" r="5" fill="#fff8e6" stroke="#2b0a10" stroke-width="2.5"/>
+        </svg>
+        <div class="section-head">
+          <p class="hand-eyebrow">دفتر المستكشف</p>
+          <h2 id="word-title" class="hand-title">آيات على <span class="scribble">الطريق</span></h2>
+          <p class="lead">آيات من الخدمة، متلوّنة زي أي كتاب مقدس بيتذاكر فيه بإيد صاحبه. كل آية محطة، وآخر محطة بتوصّل لنقطة البداية.</p>
+        </div>
+      </div>
+      <div id="scripture-root">
+        <noscript><p>«لِنَقُمْ وَلْنَبْنِ» (نحميا ٢: ١٨)</p></noscript>
+      </div>
+      <div class="journal__foot">
+        <svg class="x-trail" viewBox="0 0 220 60" aria-hidden="true"><path d="M4 50 C 40 4, 70 56, 110 28 S 170 6, 196 30" fill="none" stroke="#2b0a10" stroke-width="2.6" stroke-dasharray="2 9" stroke-linecap="round"/><path d="M190 22 206 38M206 22 190 38" stroke="#8a1f2d" stroke-width="5" stroke-linecap="round"/></svg>
+        <a class="btn btn--primary" href="#personas">كمّل الرحلة: اتعرف على الشخصيات</a>
+      </div>
+    </section>
+
+    <!-- Vision -->
+    <section class="tray arcade chapter vision" id="vision" aria-labelledby="vision-title">
+      <svg class="deco deco--medallion" aria-hidden="true"><use href="#i-medallion"/></svg>
+      <div class="section-head">
+        <p class="eyebrow"><svg class="ico" aria-hidden="true"><use href="#i-candle"/></svg>رؤيتنا</p>
+        <h2 id="vision-title">إحنا شايفين إيه؟</h2>
+      </div>
+      <blockquote class="vision-statement">نفسنا كل طفل وفتى في الكنيسة، من سن ١٠ لـ ١٢ سنة، يحب كلمة ربنا ويفتّش فيها بشجاعة، ويقدر يرد على أسئلته الصعبة بنفسه بالدليل والمنطق، ويعيش الآية <span class="scribble">صلاة حيّة</span> في القداس مش مجرد حاجة بيحفظها.</blockquote>
+      <div class="pillars" aria-label="أركان الرؤية">
+        <div class="pillar" style="--g:var(--chapter-coral)"><svg class="vicon vicon--book" aria-hidden="true"><use href="#i-book"/></svg><strong>يحب كلمة ربنا</strong><span>الكتاب المقدس يبقى حاجة بيحبها.</span></div>
+        <div class="pillar" style="--g:var(--chapter-lilac)"><svg class="vicon vicon--scroll" aria-hidden="true"><use href="#i-scroll"/></svg><strong>يفتّش بشجاعة</strong><span>السؤال الصعب مرحّب بيه، مش بيتداري.</span></div>
+        <div class="pillar" style="--g:var(--chapter-sky)"><svg class="vicon vicon--candle" aria-hidden="true"><use href="#i-candle"/></svg><strong>يرد بالدليل</strong><span>بالدليل والمنطق الهادي من غير خوف.</span></div>
+        <div class="pillar" style="--g:var(--chapter-mint)"><svg class="vicon vicon--censer" aria-hidden="true"><use href="#i-censer"/></svg><strong>يعيشها صلاة</strong><span>الآية بتتحوّل لصلاة بيعيشها.</span></div>
+      </div>
+    </section>
+
+    <div class="divider" aria-hidden="true"><svg><use href="#i-cross"/></svg></div>
+
+    <!-- Goal -->
+    <section class="tray chapter goal" id="goal" aria-labelledby="goal-title">
+      <div class="goal__rays" aria-hidden="true"></div>
+      <div class="section-head goal__head">
+        <p class="eyebrow"><svg class="ico" aria-hidden="true"><use href="#i-cross"/></svg>هدفنا</p>
+        <h2 id="goal-title">هنوصل لإيه؟</h2>
+      </div>
+
+      <div class="mission-banner">
+        <div class="mission__text">
+          <h3>رسالتنا</h3>
+          <p>نحوّل الفصل من «اقعد ساكت واحفظ» لمكان اكتشاف وسؤال وتحقيق، وبيقود ده فريق خدام عندهم <span class="scribble">شغف وانضباط ووقت</span>.</p>
+        </div>
+        <div class="mission__seal" aria-hidden="true">
+          <svg class="mission__medal"><use href="#i-medallion"/></svg>
+          <svg class="mission__cross"><use href="#i-cross"/></svg>
+        </div>
+      </div>
+
+      <h3 class="goal__title">أهدافنا للأولاد</h3>
+      <ol class="goal-path" aria-label="أهدافنا للأولاد">
+        <li class="goal-step"><span class="goal-step__n" aria-hidden="true">١</span><svg class="vicon vicon--book" aria-hidden="true"><use href="#i-book"/></svg><strong>يحبوا الكلمة</strong><p>يتعرفوا على الكتاب المقدس ويحبوه.</p></li>
+        <li class="goal-step"><span class="goal-step__n" aria-hidden="true">٢</span><svg class="vicon vicon--scroll" aria-hidden="true"><use href="#i-scroll"/></svg><strong>يسألوا بالدليل</strong><p>يتعلموا يسألوا ويفكروا ويردوا بالدليل.</p></li>
+        <li class="goal-step"><span class="goal-step__n" aria-hidden="true">٣</span><svg class="vicon vicon--censer" aria-hidden="true"><use href="#i-censer"/></svg><strong>يصلّوا بيها</strong><p>يربطوا الآية بالصلاة فتبقى صلاة معاشة.</p></li>
+        <li class="goal-step"><span class="goal-step__n" aria-hidden="true">٤</span><svg class="vicon vicon--candle" aria-hidden="true"><use href="#i-candle"/></svg><strong>ينضبطوا بفرح</strong><p>يتعودوا على الانضباط والمواعيد من غير ما نفقد روح المغامرة.</p></li>
+      </ol>
+
+      <h3 class="goal__title">مين معانا في الرحلة؟</h3>
+      <div class="arches">
+        <article class="arch" style="--g:var(--chapter-mint)"><span class="arch__icon" aria-hidden="true"><svg><use href="#i-cross"/></svg></span><h3>للخدام</h3><p>فريق مؤسس من متطوعين في ٥ مجالات، عندهم الاستعداد يتعلموا يتعاملوا مع الأولاد بحب وبصبر.</p></article>
+        <article class="arch" style="--g:linear-gradient(154.8deg,#fff2c9 22%,#ffd0ba 94%)"><span class="arch__icon" aria-hidden="true"><svg><use href="#i-church"/></svg></span><h3>لأولياء الأمور</h3><p>هنعرّفكم بالخدمة وبنظامها، فتبقوا شركاء مش متفرجين.</p></article>
+        <article class="arch" style="--g:var(--chapter-lilac)"><span class="arch__icon" aria-hidden="true"><svg><use href="#i-lamp"/></svg></span><h3>للإطلاق</h3><p>إطلاق رسمي قريب، هنعلنه لما الفريق يكتمل.</p></article>
+      </div>
+
+      <div class="medals-wrap">
+        <h3 class="goal__title goal__title--light">اللي بنمشي بيه</h3>
+        <div class="medals" aria-label="قيمنا">
+          <div class="medal"><span class="medal__disc"><svg aria-hidden="true"><use href="#i-candle"/></svg></span><strong>الشغف</strong><span>نخدم بحب مش بواجب.</span></div>
+          <div class="medal"><span class="medal__disc"><svg aria-hidden="true"><use href="#i-cross"/></svg></span><strong>الانضباط</strong><span>المواعيد جزء من الخدمة.</span></div>
+          <div class="medal"><span class="medal__disc"><svg aria-hidden="true"><use href="#i-censer"/></svg></span><strong>الوقت والعطاء</strong><span>كل واحد يساهم بوقته وموهبته.</span></div>
+          <div class="medal"><span class="medal__disc"><svg aria-hidden="true"><use href="#i-book"/></svg></span><strong>الصدق مع العقل</strong><span>منخافش من سؤال، ونرد بدليل وهدوء.</span></div>
+          <div class="medal"><span class="medal__disc"><svg aria-hidden="true"><use href="#i-church"/></svg></span><strong>الجذور</strong><span>الإسكندرية والبرديات والآباء والليتورجيا القبطية.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider" aria-hidden="true"><svg><use href="#i-cross"/></svg></div>
+
+    <!-- Reaching the children: ideas only, no plan details -->
+    <section class="tray tray--paper chapter children" id="children" aria-labelledby="children-title">
+      <svg class="deco deco--palm" aria-hidden="true"><use href="#i-palm"/></svg>
+      <div class="section-head">
+        <p class="hand-eyebrow">الأولاد</p>
+        <h2 id="children-title" class="hand-title">بنفكر إزاي <span class="scribble">مع الأولاد؟</span></h2>
+        <p class="lead">أولادنا في سن ١٠ و١٢ سنة عايشين وسط الذكاء الاصطناعي والفيديوهات السريعة والألعاب. فبنفكر نقابلهم في عالمهم، ونخلّي كلمة ربنا هي الاكتشاف الأحلى.</p>
+        <p class="small">دي الأفكار الكبيرة بس. الطريقة نفسها بنشرحها لفريق الخدمة اللي بيخدم معانا.</p>
+      </div>
+
+      <div class="waves">
+        <article class="wave wave--a">
+          <p class="wave__age">للأصغر</p>
+          <h3>نفتح باب الدهشة</h3>
+          <p class="wave__need">محتاج يحس إنه «شاطر ومكتشف»، وإنه بيحقق إنجاز مع فريقه.</p>
+        </article>
+        <article class="wave wave--b">
+          <p class="wave__age">للأكبر</p>
+          <h3>نحترم عقله وأسئلته</h3>
+          <p class="wave__need">محتاج يحس إن الكنيسة بتحترم عقله ومبتخافش من أسئلته الصعبة.</p>
+        </article>
+      </div>
+
+      <div class="labbox">
+        <h3 class="labbox__title">خمس أفكار بنمشي بيها</h3>
+        <p class="small">اضغط على أي فكرة.</p>
+        <ol class="lab" data-lab>
+          <li class="lab__st is-active" style="--c:#ffb7a8"><button type="button" aria-pressed="true"><i>١</i><b>نقابلهم في عالمهم</b></button><p>بنكلّمهم بلغتهم وبالمصري، وبنبدأ من اللي بيعيشوه كل يوم.</p></li>
+          <li class="lab__st" style="--c:#f4c85a"><button type="button" aria-pressed="false"><i>٢</i><b>اكتشاف مش حفظ</b></button><p>الفضول الأول، والآية بتتفتح بالأسئلة مش بالتلقين.</p></li>
+          <li class="lab__st" style="--c:#e9cf9c"><button type="button" aria-pressed="false"><i>٣</i><b>مفيش سؤال ممنوع</b></button><p>السؤال الصعب مرحّب بيه، ونفكّر فيه مع بعض بهدوء وبالدليل.</p></li>
+          <li class="lab__st" style="--c:#e9a98f"><button type="button" aria-pressed="false"><i>٤</i><b>نربط بالصلاة</b></button><p>اللي بنتعلمه بيرجع صلاة وعبادة نعيشها.</p></li>
+          <li class="lab__st" style="--c:#f0d28a"><button type="button" aria-pressed="false"><i>٥</i><b>لعب وإنجازات صغيرة</b></button><p>بنفرح بكل خطوة، ونتعلم وإحنا بنلعب مع بعض.</p></li>
+        </ol>
+        <div class="lab__detail" id="lab-detail" role="region" aria-live="polite" aria-label="تفاصيل الفكرة"></div>
+      </div>
+
+      <div class="rankbox">
+        <h3 class="labbox__title">ونكبّر معاهم خطوة خطوة</h3>
+        <ol class="ranks">
+          <li class="rank" style="--s:0"><svg class="vicon" aria-hidden="true"><use href="#i-scroll"/></svg><strong>يلاحظ</strong><span>بعين فاتحة على الحكاية.</span></li>
+          <li class="rank" style="--s:1"><svg class="vicon" aria-hidden="true"><use href="#i-book"/></svg><strong>يسأل</strong><span>من غير خوف ولا خجل.</span></li>
+          <li class="rank" style="--s:2"><svg class="vicon" aria-hidden="true"><use href="#i-candle"/></svg><strong>يجرّب</strong><span>يكتشف بنفسه مش بس يسمع.</span></li>
+          <li class="rank" style="--s:3"><svg class="vicon" aria-hidden="true"><use href="#i-church"/></svg><strong>يفهم</strong><span>ويقدر يشرح اللي فهمه.</span></li>
+          <li class="rank" style="--s:4"><svg class="vicon" aria-hidden="true"><use href="#i-cross"/></svg><strong>يعيش</strong><span>الإيمان بيبقى حياة مش معلومة.</span></li>
+        </ol>
+      </div>
+
+      <div class="journal__foot">
+        <a class="btn btn--primary" href="#join">عايز أخدم وأوصّل للأولاد دول</a>
+        <a class="btn btn--ghost" href="#personas">اتعرف على الفريق</a>
+      </div>
+    </section>
+
+    <div class="divider" aria-hidden="true"><svg><use href="#i-cross"/></svg></div>
+
+    <!-- Personas -->
+    <section class="tray tray--lavender chapter" id="personas" aria-labelledby="personas-title">
+      <div class="section-head">
+        <p class="eyebrow">الشخصيات الخمس</p>
+        <h2 id="personas-title">إنت أي واحد فيهم؟</h2>
+        <p class="lead">كل مجال في الخدمة ليه شخصية. دول مش ناس حقيقيين، دول رموز للفرق. اقرا وشوف مين شبهك، وبعدين اختار دورك.</p>
+        <div class="toggle" role="group" aria-label="شكل الشخصيات">
+          <button type="button" data-avatar="female" aria-pressed="true">بنت</button>
+          <button type="button" data-avatar="male" aria-pressed="false">ولد</button>
+        </div>
+      </div>
+      <div class="textile" aria-hidden="true"></div>
+      <div class="shelves" id="shelves"><noscript><p>محتاج تفعّل الجافاسكريبت علشان تشوف الشخصيات.</p></noscript></div>
+    </section>
+
+    <div class="divider" aria-hidden="true"><svg><use href="#i-cross"/></svg></div>
+
+    <!-- Join -->
+    <section class="tray chapter" id="join" aria-labelledby="join-title">
+      <div class="join">
+        <div class="join__intro">
+          <svg class="seal" aria-hidden="true"><use href="#i-cross"/></svg>
+          <p class="eyebrow">انضم للفريق المؤسس</p>
+          <h2 id="join-title">سجّل مكانك</h2>
+          <p class="lead">أربع خطوات قصيرة. اسمك ورقمك وسؤال واحد عن وقتك، ونتواصل معاك.</p>
+          <p class="small">بياناتك بتتحفظ لفريق الخدمة بس، ومبنشاركهاش مع حد.</p>
+          <div class="ticket" aria-hidden="true">
+            <div class="ticket__art"><img id="ticket-img" src="img/personas/p1-female-front.webp" alt="" width="520" height="832"></div>
+            <div class="ticket__body">
+              <p class="ticket__kicker">تذكرة الانضمام</p>
+              <strong id="ticket-name">اسمك هنا</strong>
+              <span id="ticket-role">اختار شخصيتك</span>
+              <span id="ticket-time" class="ticket__time"></span>
+            </div>
+            <svg class="ticket__cross"><use href="#i-cross"/></svg>
+          </div>
+        </div>
+
+        <div class="join__card">
+          <ol class="steps" aria-label="تقدمك في التسجيل"><li>الشخصية</li><li>الشكل</li><li>بياناتك</li><li>وقتك</li><li>خبرتك</li></ol>
+          <form id="join-form" novalidate>
+            <fieldset>
+              <legend>١. اختار الشخصية اللي شبهك</legend>
+              <div class="picker" id="persona-picker" role="radiogroup" aria-label="الشخصية"></div>
+              <p class="error" id="err-persona" role="alert"></p>
+            </fieldset>
+
+            <fieldset>
+              <legend>٢. شكل شخصيتك</legend>
+              <div class="options" id="avatar-picker" role="radiogroup" aria-label="شكل الشخصية"></div>
+            </fieldset>
+
+            <fieldset>
+              <legend>٣. بياناتك</legend>
+              <div class="field">
+                <label for="name">الاسم</label>
+                <input class="input" id="name" name="name" autocomplete="name" maxlength="80" required aria-describedby="err-name">
+                <p class="error" id="err-name" role="alert"></p>
+              </div>
+              <div class="field">
+                <label for="phone">رقم الموبايل</label>
+                <input class="input" id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" maxlength="20" dir="ltr" style="text-align:right" placeholder="01xxxxxxxxx" required aria-describedby="err-phone help-phone">
+                <p class="help" id="help-phone">هنتواصل معاك عليه، واتساب أو مكالمة.</p>
+                <p class="error" id="err-phone" role="alert"></p>
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <legend>٤. وقتك</legend>
+              <div class="options" id="availability-picker" role="radiogroup" aria-label="إمتى تقدر تخدم"></div>
+              <p class="error" id="err-availability" role="alert"></p>
+              <div class="field">
+                <label for="skill">إيه الحاجة اللي بتعرف تعملها أو بتحب تتعلمها؟ (اختياري)</label>
+                <textarea class="input" id="skill" name="skill" maxlength="300"></textarea>
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <legend>٥. خبرتك في الخدمة</legend>
+              <div class="field">
+                <span class="q" id="q-training">أخدت أي نوع من إعداد الخدام قبل كده؟</span>
+                <div class="options" id="training-picker" role="radiogroup" aria-labelledby="q-training"></div>
+                <p class="error" id="err-training" role="alert"></p>
+              </div>
+              <div class="training-more" id="training-more" hidden>
+                <div class="field">
+                  <label for="training-year">سنة كام؟</label>
+                  <input class="input" id="training-year" name="trainingYear" inputmode="numeric" maxlength="20" placeholder="مثلاً ٢٠٢٢" aria-describedby="err-training-year">
+                  <p class="error" id="err-training-year" role="alert"></p>
+                </div>
+                <div class="field">
+                  <label for="training-name">وإيه هو؟ (اسم الإعداد أو الكورس أو الجهة اللي عملته)</label>
+                  <input class="input" id="training-name" name="trainingName" maxlength="120" aria-describedby="err-training-name">
+                  <p class="error" id="err-training-name" role="alert"></p>
+                </div>
+              </div>
+              <div class="field links">
+                <span class="q" id="q-links">روابط حساباتك أو أعمالك (اختياري)</span>
+                <p class="help" id="help-links">فيسبوك، إنستجرام، Behance، Google Drive، أو أي لينك يعرّفنا بشغلك. لحد ٣ روابط.</p>
+                <div class="link-rows" id="link-rows" role="group" aria-labelledby="q-links"></div>
+                <button type="button" class="btn btn--ghost link-add" id="add-link">+ ضيف رابط تاني</button>
+                <p class="error" id="err-links" role="alert"></p>
+              </div>
+            </fieldset>
+
+            <div class="hp" aria-hidden="true"><label>الموقع <input name="website" tabindex="-1" autocomplete="off"></label></div>
+
+            <label class="check">
+              <input type="checkbox" id="consent" name="consent">
+              <span>موافق إن فريق الخدمة يتواصل معايا على الرقم ده، وإن بياناتي تتحفظ للخدمة بس.</span>
+            </label>
+            <p class="error" id="err-consent" role="alert"></p>
+
+            <div>
+              <button class="btn btn--primary" type="submit" id="submit" style="width:100%" >سجّلني في الفريق</button>
+              <p class="error" id="err-form" role="alert" aria-live="polite"></p>
+            </div>
+          </form>
+
+          <div class="success" id="success" hidden tabindex="-1">
+            <img id="success-img" alt="" width="600" height="800">
+            <h3 id="success-title">اتسجلت!</h3>
+            <p class="lead" id="success-text"></p>
+            <a class="btn" href="#top">ارجع لأول الصفحة</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="tray tray--lavender chapter" id="faq" aria-labelledby="faq-title">
+      <svg class="deco deco--lamp" aria-hidden="true"><use href="#i-lamp"/></svg>
+      <svg class="deco deco--book" aria-hidden="true"><use href="#i-book"/></svg>
+      <div class="section-head"><p class="eyebrow">أسئلة بتتسأل</p><h2 id="faq-title">قبل ما تسجّل</h2></div>
+      <div class="faq">
+        <details><summary>إيه المطلوب مني؟</summary><p>اللي بنطلبه من كل خادم هو الشغف والانضباط، وإنك تساهم بوقتك وتشغّل نفسك في الخدمة.</p></details>
+        <details><summary>التسجيل هياخد قد إيه؟</summary><p>أقل من دقيقتين: اختيار الشخصية، اسمك ورقمك، وسؤال واحد عن وقتك.</p></details>
+        <details><summary>لازم أعرف أنا هخدم في أنهي مجال؟</summary><p>لأ. اختار الشخصية اللي حاسس إنها شبهك، وهنتكلم سوا ونظبط الدور الأنسب لك.</p></details>
+        <details><summary>بياناتي رايحة فين؟</summary><p>بتتحفظ لفريق الخدمة بس علشان نتواصل معاك، ومبنستخدمهاش في حاجة تانية.</p></details>
+      </div>
+    </section>
+
+    <!-- Closing -->
+    <section class="tray tray--pink closing chapter" id="closing" aria-label="ختام">
+      <svg class="closing__palm closing__palm--a" aria-hidden="true"><use href="#i-palm"/></svg>
+      <svg class="closing__palm closing__palm--b" aria-hidden="true"><use href="#i-palm"/></svg>
+      <svg class="closing__cross" aria-hidden="true"><use href="#i-cross"/></svg>
+      <p class="hand-eyebrow">المحطة الأخيرة</p>
+      <p class="verse"><span id="closing-verse">لِنَقُمْ وَلْنَبْنِ</span></p>
+      <p class="verse-ref"><span class="scribble">نحميا ٢: ١٨</span></p>
+      <a class="btn btn--primary" href="#join">انضم للفريق</a>
+      <svg class="closing__church" aria-hidden="true" preserveAspectRatio="xMidYMax slice"><use href="#i-church"/></svg>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <svg class="footer__cross" aria-hidden="true"><use href="#i-cross"/></svg>
+    <p>فريق الخدمة · محتاجين كل واحد منكم</p>
+    <p class="small">الشخصيات رموز للفرق وليست أشخاصًا حقيقيين.</p>
+  </footer>
+</div>
+
+<script type="module" src="js/join.js"></script>
+<script type="module" src="js/scripture.js"></script>
+<script type="module" src="js/children.js"></script>
+<script type="module" src="js/scenes.js"></script>
+<script type="module" src="js/mobile.js"></script>
+</body>
+</html>

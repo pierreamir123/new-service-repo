@@ -1,0 +1,106 @@
+/* Mobile layer. Loaded last. Menu sheet, back-to-top button, swipeable persona carousel, compact cards,
+   wider form, touch behaviour. Desktop is untouched except the menu button breakpoint (<= 1000px). */
+
+button, a, summary, label.choice { -webkit-tap-highlight-color: transparent; touch-action: manipulation; }
+
+/* ---------- menu button and sheet (shown wherever the side rail is hidden) ---------- */
+.menu-btn { display: none; width: 46px; height: 46px; border-radius: 50%; place-items: center; align-content: center; gap: 4px; padding: 0; cursor: pointer; border: 1px solid rgba(217, 169, 58, 0.55); background: rgba(58, 12, 20, 0.7); }
+.menu-btn span { display: block; width: 18px; height: 2px; border-radius: 2px; background: var(--gold-hi); transition: transform var(--dp-motion-interaction), opacity var(--dp-motion-interaction); }
+.menu-btn[aria-expanded="true"] span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+.menu-btn[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.menu-btn[aria-expanded="true"] span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+.menu-scrim { position: fixed; inset: 0; z-index: 50; background: rgba(0, 0, 0, 0.5); }
+.menu-sheet { position: fixed; inset-inline: 10px; top: 80px; z-index: 55; display: grid; gap: 4px; padding: 12px; max-height: calc(100dvh - 100px); overflow: auto; border-radius: 28px; background: rgba(35, 5, 9, 0.97); border: 1px solid rgba(217, 169, 58, 0.45); box-shadow: 0 30px 60px rgba(0, 0, 0, 0.65); }
+.menu-sheet a { display: flex; align-items: center; gap: 14px; min-height: 52px; padding: 8px 14px; border-radius: 16px; text-decoration: none; font-family: var(--hand); font-size: 23px; font-weight: 700; color: var(--gold-hi); }
+.menu-sheet a:hover, .menu-sheet a[aria-current="true"] { background: rgba(217, 169, 58, 0.16); }
+.menu-sheet a i { flex: none; width: 32px; height: 32px; border-radius: 50%; display: grid; place-items: center; background: var(--wine-2); font-style: normal; font-size: 17px; box-shadow: 0 0 0 2px var(--gold); }
+.menu-sheet a.menu-sheet__cta { margin-top: 6px; justify-content: center; background: linear-gradient(180deg, var(--gold-hi), var(--gold) 70%, var(--gold-lo)); color: var(--wine-1); }
+@media (max-width: 1000px) {
+  .menu-btn { display: inline-grid; flex: none; }
+  .topbar { z-index: 56; gap: 10px; }
+  .topbar nav { flex-wrap: nowrap; gap: 8px; align-items: center; }
+  .topbar nav a:not(.btn) { display: none; }   /* the menu sheet lists every section instead */
+}
+
+/* ---------- back to top ---------- */
+.to-top { display: none; position: fixed; z-index: 45; inset-inline-start: 14px; bottom: calc(16px + env(safe-area-inset-bottom)); width: 48px; height: 48px; border-radius: 50%; place-items: center; padding: 0; cursor: pointer; color: var(--gold-hi); border: 1px solid rgba(217, 169, 58, 0.6); background: rgba(35, 5, 9, 0.85); box-shadow: 0 10px 24px rgba(0, 0, 0, 0.5); opacity: 0; pointer-events: none; transition: opacity var(--dp-motion-interaction); }
+.to-top svg { width: 26px; height: 26px; }
+.to-top.is-on { opacity: 1; pointer-events: auto; }
+@media (max-width: 1000px) { .to-top { display: grid; } }
+
+/* ---------- persona carousel dots ---------- */
+.pager { display: none; }
+
+@media (hover: none) {
+  .btn:hover, .goal-step:hover, .arch:hover, .pillar:hover, .lab__st button:hover, .choice:hover, .stop:hover, .medal:hover .medal__disc { transform: none; }
+}
+
+@media (max-width: 760px) {
+  html { scroll-snap-type: none; scroll-padding-top: 84px; }
+  :root { --dp-spacing-gap: 16px; --dp-spacing-gap-compact: 14px; }
+  .page { width: calc(100% - 20px); padding-top: 12px; }
+  .tray { padding: 26px 18px; gap: 22px; border-radius: 30px; }
+  .tray--paper { padding-inline-start: 46px; padding-inline-end: 16px; }
+  h2 { font-size: 30px; }
+  .hand-title { font-size: 36px; }
+  .lead { font-size: 17px; }
+  .footer { padding-bottom: calc(40px + env(safe-area-inset-bottom)); }
+
+  /* hero facts: lamps hang into the neighbouring card on a single column, so drop them */
+  .fact .lamp { display: none; }
+  .facts { padding-top: 0; }
+
+  /* vision */
+  .vision-statement { font-size: 26px; line-height: 1.85; padding-inline-start: 16px; }
+  .pillar { grid-template-columns: 52px minmax(0, 1fr); align-items: center; column-gap: 14px; row-gap: 2px; padding: 16px 18px; }
+  .pillar .vicon { grid-row: 1 / span 2; justify-self: center; }
+  .pillar strong { font-size: 18px; }
+
+  /* goal */
+  .goal__head h2 { font-size: 38px; }
+  .goal-path { row-gap: 46px; }
+  .goal-step { padding: 46px 16px 20px; }
+  .medals { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .medal:last-child { grid-column: 1 / -1; }
+  .medal__disc { width: 80px; height: 80px; }
+  .medal__disc svg { width: 38px; height: 38px; }
+
+  /* children: ranks become compact rows */
+  .rank { grid-template-columns: 44px minmax(0, 1fr); align-items: center; column-gap: 14px; row-gap: 0; padding: 14px 16px; border-radius: 18px; min-height: 0; }
+  .rank .vicon { grid-row: 1 / span 2; justify-self: center; }
+
+  /* personas: swipe sideways instead of five tall cards */
+  .shelves { display: flex; gap: 14px; overflow-x: auto; scroll-snap-type: x mandatory; overscroll-behavior-x: contain; scrollbar-width: none; padding: 6px 2px 14px; margin-inline: -4px; -webkit-overflow-scrolling: touch; }
+  .shelves::-webkit-scrollbar { display: none; }
+  .shelf { flex: 0 0 88%; scroll-snap-align: center; position: static; grid-template-columns: minmax(0, 1fr); gap: 14px; padding: 20px 18px; }
+  .shelf__art { justify-self: center; width: 150px; max-width: none; aspect-ratio: 5 / 7; }
+  .shelf .btn { grid-column: 1; width: 100%; }
+  .pager { display: flex; align-items: center; justify-content: center; gap: 4px; flex-wrap: wrap; }
+  .pager__hint { flex-basis: 100%; text-align: center; font-family: var(--hand); font-weight: 700; font-size: 18px; color: #8a1f2d; }
+  .pager button { width: 28px; height: 28px; padding: 0; border: 0; background: none; cursor: pointer; display: grid; place-items: center; }
+  .pager button::before { content: ""; width: 11px; height: 11px; border-radius: 50%; border: 2px solid var(--wine-3); background: transparent; transition: background var(--dp-motion-interaction), transform var(--dp-motion-interaction); }
+  .pager button[aria-current="true"]::before { background: var(--wine-3); transform: scale(1.25); }
+
+  /* form: use the full width */
+  .join__card { padding: 18px 14px; border-radius: 26px; }
+  .picker { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; }
+  .picker .choice { flex: 0 0 calc(33.333% - 6px); padding: 10px 4px 12px; font-size: 13px; }
+  .picker .choice .face { max-width: 76px; border-radius: 18px; }
+  .join { gap: 22px; }
+  .options { display: grid; grid-template-columns: minmax(0, 1fr); }
+  .choice--row { justify-content: flex-start; width: 100%; }
+  #avatar-picker { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .steps li { font-size: 12px; }
+  .steps li:not(:last-child)::after { inset-inline-start: calc(50% + 20px); width: calc(100% - 40px); }
+  .ticket { margin-top: 2px; }
+  .faq summary { padding-block: 6px; }
+}
+
+@media (max-width: 380px) {
+  h1 { font-size: 48px; }
+  .vision-statement { font-size: 24px; }
+  .btn { padding-inline: 20px; }
+}
+
+/* Ghost links need dark ink on the light paper and lavender sections (they were gold on cream). */
+.tray--paper .btn--ghost, .tray--lavender .btn--ghost { color: #8a1f2d; }

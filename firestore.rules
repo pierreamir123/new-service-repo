@@ -1,0 +1,62 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Admin Google account(s) allowed to read registrations. Keep in sync with ADMIN in tests/rules.test.mjs.
+    function isAdmin() {
+      return request.auth != null
+        && request.auth.token.email_verified == true
+        && request.auth.token.email in ['pierrebassily@gmail.com'];
+    }
+
+    // A link must be a short http(s) address with no spaces (blocks javascript: and data: URLs).
+    function validLink(u) {
+      return u is string && u.size() <= 200 && u.matches('^https?://[^ ]+$');
+    }
+
+    // At most three links; rules cannot loop, so each slot is checked by index.
+    function validLinks(l) {
+      return l is list && l.size() <= 3
+        && (l.size() < 1 || validLink(l[0]))
+        && (l.size() < 2 || validLink(l[1]))
+        && (l.size() < 3 || validLink(l[2]));
+    }
+
+    // Service-training answers are optional keys (so an older cached page can still register),
+    // but when someone says they took a training, the year and its name must be filled in.
+    function validExtras(d) {
+      return (!('trainingTaken' in d) || d.trainingTaken is bool)
+        && (!('trainingYear' in d) || (d.trainingYear is string && d.trainingYear.size() <= 20))
+        && (!('trainingName' in d) || (d.trainingName is string && d.trainingName.size() <= 120))
+        && (!('links' in d) || validLinks(d.links))
+        && (d.get('trainingTaken', false) == false
+            || (d.get('trainingYear', '').size() >= 1 && d.get('trainingName', '').size() >= 2));
+    }
+
+    function validNew(d) {
+      return d.keys().hasOnly(['name', 'phone', 'persona', 'avatar', 'availability', 'skill', 'consent', 'status', 'createdAt', 'trainingTaken', 'trainingYear', 'trainingName', 'links'])
+        && d.keys().hasAll(['name', 'phone', 'persona', 'avatar', 'availability', 'skill', 'consent', 'status', 'createdAt'])
+        && validExtras(d)
+        && d.name is string && d.name.size() >= 2 && d.name.size() <= 80
+        && d.phone is string && d.phone.matches('^01[0125][0-9]{8}$')
+        && d.persona is int && d.persona >= 1 && d.persona <= 5
+        && d.avatar in ['female', 'male']
+        && d.availability in ['weekdays', 'weekend', 'flexible']
+        && d.skill is string && d.skill.size() <= 300
+        && d.consent == true
+        && d.status == 'new'
+        && d.createdAt == request.time;
+    }
+
+    match /volunteers/{id} {
+      // The public can submit a registration, never read one.
+      allow create: if validNew(request.resource.data);
+      allow read, delete: if isAdmin();
+      // The admin may only change the follow-up status.
+      allow update: if isAdmin()
+        && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['status'])
+        && request.resource.data.status in ['new', 'contacted', 'onboarded'];
+    }
+  }
+}

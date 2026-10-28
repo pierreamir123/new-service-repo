@@ -1,0 +1,159 @@
+/* ======================================================================
+   Coptic Orthodox theme: dark red (wine) and gold. Loaded after theme.css and overrides its navy/orange values.
+   Visuals are inline SVG symbols in index.html (#i-cross, #i-church, #i-censer, #i-book, #i-candle).
+   ====================================================================== */
+:root {
+  --wine-0: #230509; --wine-1: #3a0c14; --wine-2: #561520; --wine-3: #7a1c2b;
+  --gold: #d9a93a; --gold-hi: #f4d98a; --gold-lo: #a67c1f; --ivory: #fff7e6;
+  --ink-wine: #2b0a10;
+  --navy-0: var(--wine-0); --navy-1: var(--wine-1); --navy-2: var(--wine-2);
+  --sc-brand: var(--gold); --sc-ink-navy: var(--ink-wine); --sc-ink: #2b0a10; --sc-ink-light: #fbf1dc;
+  --pen: var(--ink-wine);
+  --dp-color-ink: var(--ink-wine); --dp-color-ink-secondary: #5a2a30;
+  --mesh-light: radial-gradient(70% 55% at 82% 8%, #fff4dc 0%, transparent 60%), radial-gradient(65% 55% at 14% 24%, #f6ddc9 0%, transparent 58%), radial-gradient(75% 60% at 86% 88%, #f0dfb4 0%, transparent 62%), linear-gradient(160deg, #fbf0dc 0%, #fff7ea 52%, #f4e3c4 100%);
+  --chapter-lilac: linear-gradient(154.8deg, #fff3d6 22%, #f0d28a 94%);
+  --chapter-coral: linear-gradient(154.8deg, #ffb7a8 22%, #fbe3c0 94%);
+  --chapter-sun: linear-gradient(154.8deg, #f4c85a 22%, #c9892a 94%);
+  --chapter-sky: linear-gradient(154.8deg, #fff6e3 22%, #e8cf9c 94%);
+  --chapter-mint: linear-gradient(154.8deg, #ffe3d4 22%, #e9a98f 94%);
+  --chapter-iris: linear-gradient(154.8deg, #f9e6e0 22%, #e0b8a8 94%);
+  --hl1: #ffe066; --hl2: #ffb3b3; --hl3: #f6c177; --hl4: #f3b8b8; --hl5: #f1d9a0; --hl6: #e7c1a0;
+}
+html { background: var(--wine-0); }
+body {
+  color: var(--sc-ink-light);
+  background:
+    radial-gradient(60% 40% at 85% 0%, rgba(217, 169, 58, 0.20), transparent 70%),
+    radial-gradient(50% 35% at 5% 30%, rgba(122, 28, 43, 0.45), transparent 70%),
+    linear-gradient(180deg, var(--wine-0), var(--wine-1) 40%, var(--wine-0));
+  background-attachment: fixed;
+}
+:focus-visible { outline-color: var(--gold-hi); }
+.tray--lavender :focus-visible, .cushion :focus-visible, .shelf :focus-visible, .faq :focus-visible { outline-color: var(--wine-2); }
+
+.tray { border-color: rgba(217, 169, 58, 0.28); background: rgba(255, 240, 210, 0.05); }
+.tray--lavender { border-color: rgba(255, 255, 255, 0.7); background: var(--mesh-light); }
+.hero.tray--pink { background: radial-gradient(70% 90% at 12% 0%, rgba(217, 169, 58, 0.26), transparent 60%), radial-gradient(60% 80% at 100% 100%, rgba(122, 28, 43, 0.7), transparent 62%), rgba(255, 240, 210, 0.04); }
+.closing.tray--pink { background: var(--chapter-sun); color: var(--ink-wine); }
+.cushion, .value, .goals .row, .goals .lead-story, .shelf, .faq details { color: var(--ink-wine); }
+.cushion p, .cushion li, .shelf p, .fact span, .value span, .goals .row p { color: #4a1f26; }
+.eyebrow { color: var(--gold-hi); }
+.tray--lavender .eyebrow, .closing .eyebrow, .hand-eyebrow { color: #8a1f2d; }
+.lead { color: rgba(251, 241, 220, 0.82); }
+.tray--lavender .lead, .closing .lead, .tray--paper .lead { color: #5a2a30; }
+.small { color: rgba(251, 241, 220, 0.7); }
+.tray--lavender .small, .closing .small { color: #5a2a30; }
+.help { color: rgba(251, 241, 220, 0.66); }
+.field label, .check { color: rgba(251, 241, 220, 0.88); }
+
+/* gold buttons with wine text */
+.btn { background: linear-gradient(rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0) 55%), rgba(58, 12, 20, 0.55); border-color: rgba(217, 169, 58, 0.45); color: var(--gold-hi); }
+.btn--primary, .tray--pink .btn--primary { background: linear-gradient(180deg, var(--gold-hi), var(--gold) 70%, var(--gold-lo)); border-color: var(--gold-hi); color: var(--wine-1); box-shadow: 0 12px 30px rgba(217, 169, 58, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.6); }
+.btn--primary:hover { background: linear-gradient(180deg, #fbe7a8, #e3b445 70%, var(--gold-lo)); box-shadow: 0 16px 36px rgba(217, 169, 58, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.6); }
+.tray--lavender .btn:not(.btn--primary), .closing .btn:not(.btn--primary) { color: var(--wine-1); background: #fff; border-color: rgba(122, 28, 43, 0.2); }
+.closing .btn--primary { background: linear-gradient(180deg, var(--wine-3), var(--wine-1)); border-color: var(--wine-1); color: var(--gold-hi); box-shadow: 0 12px 30px rgba(58, 12, 20, 0.45); }
+.btn--ghost { color: var(--gold-hi); background: transparent; border-color: transparent; box-shadow: none; }
+.topbar { background: rgba(58, 12, 20, 0.6); border-color: rgba(217, 169, 58, 0.3); }
+.brand::before { background: var(--gold); box-shadow: 0 0 14px rgba(217, 169, 58, 0.8); }
+.toggle { background: rgba(122, 28, 43, 0.12); border-color: rgba(122, 28, 43, 0.2); }
+.toggle button { color: var(--wine-1); }
+.toggle button[aria-pressed="true"] { background: var(--wine-2); color: var(--gold-hi); box-shadow: 0 8px 20px rgba(86, 21, 32, 0.4); }
+
+/* gold scribble on dark, wine scribble on light */
+.scribble { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='10' viewBox='0 0 60 10'%3E%3Cpath d='M0 6 Q7.5 0 15 6 T30 6 T45 6 T60 6' fill='none' stroke='%23d9a93a' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E"); }
+.tray--paper .scribble, .tray--lavender .scribble, .closing .scribble { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='10' viewBox='0 0 60 10'%3E%3Cpath d='M0 6 Q7.5 0 15 6 T30 6 T45 6 T60 6' fill='none' stroke='%238a1f2d' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E"); }
+.margin-note { color: var(--gold-hi); }
+.shelf__name small { color: #8a1f2d; border-color: currentColor; }
+.chips li { background: #f5e3b3; color: var(--ink-wine); }
+.shelf { background: linear-gradient(154.8deg, #fffaf0 30%, #f3dfae 170%); }
+.fits { color: #5a2a30; }
+.fits strong { color: var(--ink-wine); }
+
+/* journal paper */
+.tray--paper {
+  color: var(--ink-wine);
+  background:
+    radial-gradient(120% 70% at 100% 0%, rgba(255, 255, 255, 0.55), transparent 60%),
+    repeating-linear-gradient(to bottom, transparent 0 39px, rgba(122, 28, 43, 0.12) 39px 40px),
+    linear-gradient(160deg, #fbf0d8, #f0dcb4);
+}
+.tray--paper::before { background: rgba(138, 31, 45, 0.5); }
+.verse-ref { color: #6b2a33; }
+.source { color: #7a4a4f; }
+.pin { background: var(--wine-2); color: var(--gold-hi); border-color: var(--gold-hi); box-shadow: 0 8px 14px rgba(86, 21, 32, 0.45); }
+.stop { color: var(--ink-wine); }
+
+/* form */
+.join__card { background: rgba(35, 5, 9, 0.7); border-color: rgba(217, 169, 58, 0.28); }
+.choice { border-color: rgba(217, 169, 58, 0.25); }
+.choice .dot { border-color: rgba(244, 217, 138, 0.6); }
+.choice:has(input:checked) { border-color: var(--gold); background: rgba(217, 169, 58, 0.14); box-shadow: 0 0 0 1px var(--gold), 0 12px 30px rgba(217, 169, 58, 0.25); }
+.choice:has(input:checked) .dot { border-color: var(--gold); }
+.choice:has(input:checked) .dot::after { background: var(--gold); }
+.choice:has(input:focus-visible) { outline-color: var(--gold-hi); }
+.input { border-color: rgba(217, 169, 58, 0.25); color: var(--sc-ink-light); }
+.input:focus { border-color: var(--gold-hi); box-shadow: 0 0 0 3px rgba(217, 169, 58, 0.35); }
+.input::placeholder { color: rgba(251, 241, 220, 0.5); }
+.tray--lavender .input { color: var(--ink-wine); background: #fff; border-color: rgba(122, 28, 43, 0.2); }
+.tray--lavender .input::placeholder { color: #8a6a6e; }
+.check input { accent-color: var(--gold); }
+.error { color: #ffb4a8; }
+.tray--lavender .error { color: #9c1d36; }
+.faq summary::after { background: var(--wine-2); color: var(--gold-hi); }
+.faq details { border-color: rgba(122, 28, 43, 0.12); }
+.faq details p { color: #5a2a30; }
+.footer { border-top-color: rgba(217, 169, 58, 0.3); color: rgba(251, 241, 220, 0.72); }
+
+/* ---------- Coptic visuals ---------- */
+.ico { width: 22px; height: 22px; flex: none; }
+
+/* braided gold border with a Coptic cross in the middle */
+.divider { display: flex; align-items: center; gap: 18px; padding-inline: 8px; color: var(--gold); }
+.divider::before, .divider::after { content: ""; flex: 1; height: 14px; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='44' height='14' viewBox='0 0 44 14'%3E%3Cpath d='M0 7 Q11 -3 22 7 T44 7' fill='none' stroke='%23d9a93a' stroke-width='2'/%3E%3Cpath d='M0 7 Q11 17 22 7 T44 7' fill='none' stroke='%23d9a93a' stroke-width='2' opacity='.65'/%3E%3C/svg%3E") repeat-x center / 44px 14px; }
+.divider svg { width: 34px; height: 34px; flex: none; filter: drop-shadow(0 0 10px rgba(217, 169, 58, 0.5)); }
+
+/* hero: large faint cross and the church skyline along the bottom */
+.hero { overflow: hidden; }
+.hero > * { position: relative; z-index: 1; }
+.hero > .hero__cross { position: absolute; z-index: 0; width: 520px; height: 520px; inset-inline-end: -90px; top: -60px; color: var(--gold); opacity: 0.08; pointer-events: none; }
+.hero > .hero__church { position: absolute; z-index: 0; inset-inline: 0; bottom: 0; width: 100%; height: 150px; color: #230509; opacity: 0.55; pointer-events: none; filter: drop-shadow(0 -1px 0 rgba(217, 169, 58, 0.55)); }
+.hero > .margin-note { position: absolute; }
+/* character cards become church-window arches framed in gold */
+.sculpture img { border-radius: 50% 50% 22px 22px / 26% 26% 22px 22px; border: 2px solid var(--gold); box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.55), 0 0 0 4px rgba(35, 5, 9, 0.6); }
+
+.vicon { width: 34px; height: 34px; color: var(--wine-3); flex: none; }
+.vicon--candle { width: 22px; height: 38px; }
+.vicon--censer { width: 28px; height: 36px; }
+.vicon--book { width: 44px; height: 33px; }
+.vicon--church { width: 56px; height: 24px; }
+.value { align-content: start; }
+
+.shelf__art { border-radius: 999px 999px 18px 18px; border: 3px solid var(--gold); box-shadow: 0 0 0 3px #fffaf0, 0 0 0 5px var(--wine-3), 0 14px 24px -12px rgba(86, 21, 32, 0.5); }
+
+.verse-cross { display: block; color: var(--wine-3); }
+.verse-cross svg { width: 54px; height: 54px; }
+.tray--paper .compass { filter: drop-shadow(0 8px 10px rgba(86, 21, 32, 0.3)); }
+
+.join__intro > .seal { position: absolute; inset-inline-end: -10px; top: -10px; width: 200px; height: 200px; color: var(--gold); opacity: 0.1; pointer-events: none; }
+.join__intro > :not(.seal) { position: relative; }
+
+.closing { position: relative; overflow: hidden; }
+.closing > * { position: relative; z-index: 1; }
+.closing > .closing__church { position: absolute; z-index: 0; inset-inline: 0; bottom: 0; width: 100%; height: 130px; color: var(--wine-1); opacity: 0.22; pointer-events: none; }
+.closing__cross { width: 64px; height: 64px; color: var(--wine-2); }
+.footer__cross { width: 28px; height: 28px; color: var(--gold); flex: none; }
+.footer { align-items: center; }
+
+@media (max-width: 760px) {
+  .hero > .hero__cross { width: 340px; height: 340px; inset-inline-end: -80px; }
+  .hero > .hero__church { height: 110px; }
+  .hero > .margin-note { position: static; }
+  .closing > .closing__church { height: 96px; }
+  .divider svg { width: 28px; height: 28px; }
+}
+
+/* Decorative crosses may extend past a section's edge; clip them so the page never scrolls sideways. */
+.tray { overflow: clip; }
+html, body { overflow-x: clip; }
+.hp { inset-inline-start: auto; left: -9999px; }
+.closing { padding-bottom: clamp(120px, 16vw, 190px); }

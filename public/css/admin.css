@@ -1,0 +1,7 @@
+/* Admin dashboard extras: training and link columns. */
+table { min-width: 1180px; }
+td.training { max-width: 220px; font-size: 14px; color: #3a4468; }
+td.links { max-width: 220px; }
+td.links .chip-link { display: inline-block; margin: 2px 4px 2px 0; padding: 4px 12px; border-radius: 999px; font-size: 13px; font-weight: 600; direction: ltr; text-decoration: none; color: var(--ink-wine); background: #f5e3b3; border: 1px solid rgba(122, 28, 43, 0.25); }
+td.links .chip-link:hover { background: #f0d28a; }
+td.links .chip-link:focus-visible { outline: 3px solid var(--wine-2); outline-offset: 2px; }
