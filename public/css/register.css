@@ -16,3 +16,21 @@
 .link-remove:hover { background: rgba(122, 28, 43, 0.8); }
 .link-add { justify-self: start; min-height: 44px; padding-inline: 14px; text-decoration: none; border: 1px dashed rgba(217, 169, 58, 0.55); border-radius: 999px; }
 .link-add[hidden] { display: none; }
+
+/* Open-book spread on the join page: الكلمة on the first (right) page, the form on the second */
+.book { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); border-radius: 28px; overflow: hidden; border: 3px solid var(--gold); box-shadow: 0 0 0 5px rgba(35, 5, 9, 0.55), var(--lift); position: relative; }
+.book::after { content: ""; position: absolute; inset-block: 0; inset-inline-start: 50%; width: 56px; translate: 50% 0; pointer-events: none; background: linear-gradient(90deg, transparent, rgba(35, 5, 9, 0.35) 45%, rgba(35, 5, 9, 0.5) 50%, rgba(35, 5, 9, 0.35) 55%, transparent); }
+.book > .tray { border-radius: 0; border: 0; box-shadow: none; margin: 0; }
+.book .join { grid-template-columns: minmax(0, 1fr); }
+.book .join__intro { position: static; }
+.book .journal__head { flex-direction: column; text-align: center; }
+@media (max-width: 1000px) {
+  .book { grid-template-columns: minmax(0, 1fr); }
+  .book::after { display: none; }
+}
+
+/* Join page: use the full width, tighter page margins */
+.join-page .page { width: min(1560px, 100% - 16px); }
+.join-page .book > .tray { padding-block: clamp(20px, 3vw, 40px); padding-inline-end: clamp(14px, 2vw, 28px); }
+.join-page .book .join__card { padding: clamp(14px, 2vw, 24px); }
+.join-page .book > #join { padding-inline-start: clamp(14px, 2vw, 28px); }

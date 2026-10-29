@@ -23,7 +23,7 @@ if (btn && rail.length) {
     sheet.append(link);
   });
   const cta = document.createElement('a');
-  cta.href = '#join';
+  cta.href = 'join.html';
   cta.className = 'menu-sheet__cta';
   cta.textContent = 'انضم للفريق';
   sheet.append(cta);

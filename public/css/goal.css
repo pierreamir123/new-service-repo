@@ -29,7 +29,7 @@
 .goal-step p { font-size: 17px; line-height: 1.75; color: #4a1f26; }
 
 /* ---------- who walks with us: church-window arches ---------- */
-.arches { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 26px; }
+.arches { display: grid; grid-template-columns: minmax(0, 420px); justify-content: center; gap: 26px; }
 .arch { display: grid; gap: 10px; justify-items: center; align-content: start; text-align: center; padding: 44px 28px 30px; border-radius: 150px 150px 26px 26px; color: var(--ink-wine); background: var(--g); border: 3px solid var(--gold); box-shadow: 0 0 0 5px rgba(35, 5, 9, 0.55), var(--lift); transition: transform var(--dp-motion-interaction); }
 .arch:hover { transform: translateY(-6px); }
 .arch__icon { width: 68px; height: 68px; border-radius: 50%; display: grid; place-items: center; background: var(--wine-2); color: var(--gold-hi); box-shadow: 0 0 0 3px var(--gold-hi), 0 10px 20px rgba(0, 0, 0, 0.35); }

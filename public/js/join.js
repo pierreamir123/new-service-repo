@@ -14,33 +14,6 @@ const el = (tag, props = {}, ...kids) => {
 const state = { avatar: 'female', persona: null };
 const personaById = (id) => PERSONAS.find((p) => p.id === id);
 
-// ---------- persona shelves ----------
-function renderShelves() {
-  const box = $('#shelves');
-  box.replaceChildren(...PERSONAS.map((p, i) => {
-    const art = el('div', { className: 'shelf__art' }, el('img', { src: img(p, state.avatar, 'front'), alt: `${p.ar}، ${p.en}`, width: 520, height: 832, loading: 'lazy' }));
-    const name = el('div', { className: 'shelf__name' }, el('h3', { textContent: p.ar }), el('small', { textContent: `${p.en} · ${p.focus}` }));
-    const traits = el('ul', { className: 'chips' }, ...p.traits.map((t) => el('li', { textContent: t })));
-    traits.querySelectorAll('li').forEach((li) => li.style.setProperty('--chip', p.color));
-    const fits = el('p', { className: 'fits' }, el('strong', { textContent: 'بيناسب الفريق ده: ' }), p.fits.join('، '));
-    const body = el('div', { className: 'shelf__body' }, name, el('p', { textContent: p.desc }), traits, fits);
-    const pick = el('button', { type: 'button', className: 'btn', textContent: 'اختار الدور ده' });
-    pick.addEventListener('click', () => { selectPersona(p.id); $('#join').scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' }); setTimeout(() => $('#name').focus({ preventScroll: true }), 400); });
-    const shelf = el('article', { className: 'shelf', 'aria-label': p.ar }, art, body, pick);
-    shelf.style.setProperty('--tint', p.color);
-    shelf.style.setProperty('--i', i);
-    return shelf;
-  }));
-}
-
-function setAvatar(avatar) {
-  state.avatar = avatar;
-  document.querySelectorAll('.toggle button').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.avatar === avatar)));
-  renderShelves();
-  renderPickers();
-  refreshLive();
-}
-document.querySelectorAll('.toggle button').forEach((b) => b.addEventListener('click', () => setAvatar(b.dataset.avatar)));
 
 // ---------- form pickers ----------
 function choice(name, value, labelNode, checked, onChange, extraClass = '') {
@@ -242,7 +215,9 @@ function showSuccess(name = '') {
   s.focus();
 }
 
-renderShelves();
+const qs = new URLSearchParams(location.search);
+if (['female', 'male'].includes(qs.get('avatar'))) state.avatar = qs.get('avatar');
+if (personaById(Number(qs.get('persona')))) state.persona = Number(qs.get('persona'));
 renderPickers();
 renderTraining();
 addLinkRow();

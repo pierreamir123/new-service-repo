@@ -157,3 +157,4 @@ body {
 html, body { overflow-x: clip; }
 .hp { inset-inline-start: auto; left: -9999px; }
 .closing { padding-bottom: clamp(120px, 16vw, 190px); }
+.closing .btn--xl { font-size: 28px; min-height: 76px; padding: 16px 64px; }
